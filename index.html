@@ -1,27 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="twittler_stylesheet.css">
+
     <script src="data_generator.js"></script>
+    <script src="twittler.js" type="text/javascript" ></script>
   </head>
-  <body>
-    <script>
+  <body >
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="nav-menu">
+          <ul class="navbar-left">
+            <li class="img_txt_home"><div class="homeTarget"><a href="#"><img src="https://imagizer.imageshack.us/v2/400x384q90/855/1vyz.png" alt=""/><span>Twittler Home</span></a></div></li>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+            <li class="img_txt"><div class="notifTarget"><a href="#"><img src="https://imagizer.imageshack.us/v2/332x380q90/853/jrth.png" alt=""/><span>Notifications</span></a></div></li>
 
-      });
+            <li class="img_txt"><a href="#"><img src="https://imagizer.imageshack.us/v2/372x376q90/19/mc7n.png" alt=""/><span>Discover</span></a></li>
 
-    </script>
+            <li class="img_txt"><div class="myTweets"><a href="#"><img src="https://imagizer.imageshack.us/v2/504x492q90/593/rbp3.png" alt=""/><span>Me</span></a></div></li>
+
+            <li class="img"><div class="tweetTarget"><a href="#"><img src="https://imagizer.imageshack.us/v2/96x84q90/203/uo15.png" alt=""/></a></div></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">    
+            <li class="img3"><div class="alertTarget"><a href="#"><img src="https://imagizer.imageshack.us/v2/568x144q90/62/jsdu.png" alt=""/></a></div></li>
+          </ul>
+          <div>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+
+            </form>
+          </div>
+        </div>
+    </nav>  
+
+
+
+    <div class="clear"></div>
+
+
+
+<!-- ======================================== -->
+
+  <div role="main" aria-labelledby="content-main-heading" class="content-main  " id="timeline">
+    <div class="content-header">
+      <div class="header-inner">
+        <h2 id="content-main-heading" class="javascript-timeline-title"><span id="changeTxt"></span>Tweets</h2>
+      </div>
+    </div>
+  
+    <div class="stream-item">
+      <div class=".new-tweets-bar"></div>
+    </div>
+    <div class="stream-home-stream">
+      <ol class="stream-items-ol">
+      </ol>    
+    </div>  
+  </div>
+
+
+
   </body>
 </html>
